@@ -1,0 +1,18 @@
+:root {
+  --color-font-main: #1e1e1e;
+  --color-font-light: #fff;
+
+  --color-btn-main: #d3eaff;
+  --color-btn-main-hover: #cae0ff;
+  --color-btn-secondary: #ececec;
+  --color-btn-secondary-hover: #e5e5e5;
+  --color-btn-secondary-active: #dd377d;
+  --color-btn-secondary-active-hover: #d2276f;
+  --color-btn-transparent: transparent;
+  --color-btn-filter: #556b84;
+
+  --color-bg-transparent: rgba(30, 30, 30, 0.48);
+  --color-bg-hero: #3c3c3c;
+
+  --anim: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
