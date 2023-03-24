@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/space-x-test/static/css/main.b57c4bf2.css",
+    "main.js": "/space-x-test/static/js/main.d350cdcb.js",
+    "static/js/787.1df0d82a.chunk.js": "/space-x-test/static/js/787.1df0d82a.chunk.js",
+    "static/media/astronaut.jpg": "/space-x-test/static/media/astronaut.e87e65a79fa24e5f57d1.jpg",
+    "static/media/spaceship.jpg": "/space-x-test/static/media/spaceship.46dd2ed8dd6afa6bb589.jpg",
+    "static/media/spaceman.jpg": "/space-x-test/static/media/spaceman.7705a09928dfceb56902.jpg",
+    "static/media/spaseship.jpg": "/space-x-test/static/media/spaseship.3dff2824557ec96cc659.jpg",
+    "static/media/heart.svg": "/space-x-test/static/media/heart.f30e1d9b4719730ad4d9e39666d38067.svg",
+    "index.html": "/space-x-test/index.html",
+    "static/media/delete.svg": "/space-x-test/static/media/delete.ff1fe7718bc537403c4d9e8dc145a50f.svg",
+    "static/media/arrow-down.svg": "/space-x-test/static/media/arrow-down.0ce0c3436c25084d2901ddb27423959a.svg",
+    "static/media/carouseldot-full.svg": "/space-x-test/static/media/carouseldot-full.f7040400d8a7c97f446078179884dfac.svg",
+    "static/media/arrow-left.svg": "/space-x-test/static/media/arrow-left.8059f53f2b9d28b843dfabe0ccb395db.svg",
+    "static/media/arrow-right.svg": "/space-x-test/static/media/arrow-right.bbead0c115d85108173dca02a50e1b33.svg",
+    "static/media/carouseldot-empty.svg": "/space-x-test/static/media/carouseldot-empty.cd50281c3541f0500fd6070d5cd48ddb.svg",
+    "main.b57c4bf2.css.map": "/space-x-test/static/css/main.b57c4bf2.css.map",
+    "main.d350cdcb.js.map": "/space-x-test/static/js/main.d350cdcb.js.map",
+    "787.1df0d82a.chunk.js.map": "/space-x-test/static/js/787.1df0d82a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b57c4bf2.css",
+    "static/js/main.d350cdcb.js"
+  ]
+}
