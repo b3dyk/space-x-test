@@ -13,7 +13,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
-      <BrowserRouter>
+      <BrowserRouter basename="space-x-test">
         <App />
       </BrowserRouter>
     </ApolloProvider>
