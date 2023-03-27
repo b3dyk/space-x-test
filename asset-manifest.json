@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/space-x-test/static/css/main.741b48b2.css",
-    "main.js": "/space-x-test/static/js/main.c85289fd.js",
+    "main.js": "/space-x-test/static/js/main.dc2fe21f.js",
     "static/js/787.1df0d82a.chunk.js": "/space-x-test/static/js/787.1df0d82a.chunk.js",
     "static/media/404.gif": "/space-x-test/static/media/404.5b5e444107fadda6e949.gif",
     "static/media/astronaut.jpg": "/space-x-test/static/media/astronaut.e87e65a79fa24e5f57d1.jpg",
@@ -19,11 +19,11 @@
     "static/media/carouseldot-empty-dark.svg": "/space-x-test/static/media/carouseldot-empty-dark.103dc98e3f46119a2f9247233d3bebdf.svg",
     "static/media/carouseldot-empty.svg": "/space-x-test/static/media/carouseldot-empty.cd50281c3541f0500fd6070d5cd48ddb.svg",
     "main.741b48b2.css.map": "/space-x-test/static/css/main.741b48b2.css.map",
-    "main.c85289fd.js.map": "/space-x-test/static/js/main.c85289fd.js.map",
+    "main.dc2fe21f.js.map": "/space-x-test/static/js/main.dc2fe21f.js.map",
     "787.1df0d82a.chunk.js.map": "/space-x-test/static/js/787.1df0d82a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.741b48b2.css",
-    "static/js/main.c85289fd.js"
+    "static/js/main.dc2fe21f.js"
   ]
 }
