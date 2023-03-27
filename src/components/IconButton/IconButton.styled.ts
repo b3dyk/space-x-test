@@ -12,9 +12,8 @@ export const StyledIconButton = styled.button`
 
   transition: background-color var(--anim);
 
-  :hover,
-  :focus {
-    background-color: var(--color-btn-secondary-hover);
+  :hover {
+    background-color: ${(props) => props.theme.backgroundColor};
   }
 `;
 
@@ -24,6 +23,6 @@ StyledIconButton.defaultProps = {
   },
 };
 
-export const themeHero = {
-  backgroundColor: "transparent",
+export const themeFavourite = {
+  backgroundColor: "#dd377d",
 };
