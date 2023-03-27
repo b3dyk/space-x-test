@@ -15,6 +15,10 @@ export const StyledIconButton = styled.button`
   :hover {
     background-color: ${(props) => props.theme.backgroundColor};
   }
+
+  :active {
+    transform: scale(0.98);
+  }
 `;
 
 StyledIconButton.defaultProps = {

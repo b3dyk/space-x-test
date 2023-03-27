@@ -30,8 +30,13 @@ export const CardsCarousel: React.FC = () => {
     setCurrentIdx((currentIdx) =>
       currentIdx === data.rockets.length - CARDS_SHOWN ? 0 : currentIdx + 1
     );
-  const cardCarouselHandler = (index: number) => {
+
+  const carouselHandler = (index: number) => {
     setCurrentIdx(index);
+  };
+
+  const numberOfPages = (arrayLength: number) => {
+    return arrayLength - CARDS_SHOWN + 1;
   };
 
   return (
@@ -52,7 +57,7 @@ export const CardsCarousel: React.FC = () => {
         <p>Loading...</p>
       ) : (
         <ListWrapper>
-          <List style={{ transform: `translateX(-${currentIdx * 33.55}%)` }}>
+          <List style={{ transform: `translateX(-${currentIdx * 33.75}%)` }}>
             {data.rockets.map((rocket: RocketType, idx: number) => (
               <Card
                 key={rocket.id}
@@ -66,15 +71,17 @@ export const CardsCarousel: React.FC = () => {
             ))}
           </List>
           <CardCarousel>
-            {data.rockets.slice(0, 2).map((rocket: RocketType, idx: number) => (
-              <div key={rocket.id} onClick={() => cardCarouselHandler(idx)}>
-                {currentIdx === idx ? (
-                  <SVG.CarouselDotFullDark style={{ cursor: "pointer" }} />
-                ) : (
-                  <SVG.CarouselDotDark style={{ cursor: "pointer" }} />
-                )}
-              </div>
-            ))}
+            {data.rockets
+              .slice(0, numberOfPages(data.rockets.length))
+              .map((rocket: RocketType, idx: number) => (
+                <div key={rocket.id} onClick={() => carouselHandler(idx)}>
+                  {currentIdx === idx ? (
+                    <SVG.CarouselDotFullDark style={{ cursor: "pointer" }} />
+                  ) : (
+                    <SVG.CarouselDotDark style={{ cursor: "pointer" }} />
+                  )}
+                </div>
+              ))}
           </CardCarousel>
         </ListWrapper>
       )}

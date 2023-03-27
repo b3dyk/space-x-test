@@ -14,7 +14,7 @@ import { ReactComponent as CarouselDotFullDark } from "./svg/carouseldot-full-da
 import { ReactComponent as CarouselDotDark } from "./svg/carouseldot-empty-dark.svg";
 
 export const cardImages: string[] = [spaceship, spacegirl, spaceman];
-export const bgImages: string[] = [cosmonaut, spacestation, girl];
+export const bgImages: string[] = [spacestation, cosmonaut, girl];
 
 export const SVG = {
   ArrowDown,

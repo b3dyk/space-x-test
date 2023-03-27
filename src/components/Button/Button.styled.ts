@@ -18,9 +18,12 @@ export const StyledButton = styled.button`
   background-color: var(--color-btn-main);
   transition: background-color var(--anim);
 
-  :hover,
-  :focus {
+  :hover {
     background-color: var(--color-btn-main-hover);
+  }
+
+  :active {
+    transform: scale(0.98);
   }
 `;
 
