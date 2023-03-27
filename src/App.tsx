@@ -4,6 +4,7 @@ import "./App.css";
 import Layout from "./components/Layout/Layout";
 import FavouritesPage from "./pages/FavouritesPage/FvouritesPage";
 import HomePage from "./pages/HomePage/HomePage";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 
 const App: React.FC = () => {
   return (
@@ -12,6 +13,8 @@ const App: React.FC = () => {
         <Route index element={<HomePage />} />
         <Route path="favourites" element={<FavouritesPage />} />
       </Route>
+
+      <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
 };
