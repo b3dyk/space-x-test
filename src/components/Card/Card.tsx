@@ -8,38 +8,51 @@ import { IconButton } from "../IconButton/IconButton";
 import { CardItem, CardHeading, Description, BtnWrapper } from "./Card.styled";
 import { themeWide } from "../Button/Button.styled";
 import { ReadMoreReadLess } from "../ReadMoreReadLess/ReadMoreReadLess";
+import { RocketType } from "../../types/types";
+import { useRecoilValue } from "recoil";
+import { favouritesAtom } from "../../recoil/atoms";
 
 type CardProps = {
+  rocket: RocketType;
   image: string;
-  title: string;
-  text: string;
 };
 
-export const Card: React.FC<CardProps> = ({
-  image,
-  title,
-  text,
-}: CardProps) => {
+export const Card: React.FC<CardProps> = ({ rocket, image }: CardProps) => {
+  const rockets = useRecoilValue(favouritesAtom);
+
   const location = useLocation();
+
+  const isAddedToFav = rockets.find((item) => item.id === rocket.id);
+
   return (
     <CardItem>
       <img src={image} alt="space" width="411" />
       <Description>
-        <CardHeading>{title}</CardHeading>
-        <ReadMoreReadLess limit={100}>{text}</ReadMoreReadLess>
+        <CardHeading>{rocket.name}</CardHeading>
+        <ReadMoreReadLess limit={100}>{rocket.description}</ReadMoreReadLess>
         <BtnWrapper>
           <ThemeProvider theme={themeWide}>
             <Button text="buy" />
           </ThemeProvider>
-          <IconButton>
-            {location.pathname.includes("favourites") ? (
+          {location.pathname.includes("favourites") ? (
+            <IconButton rocket={rocket}>
               <Delete />
-            ) : (
-              <Heart style={{ fill: "#000" }} />
-            )}
-          </IconButton>
+            </IconButton>
+          ) : (
+            <IconButton rocket={rocket}>
+              <Heart style={isAddedToFav ? favouritesStyle : generalStyle} />
+            </IconButton>
+          )}
         </BtnWrapper>
       </Description>
     </CardItem>
   );
+};
+
+const generalStyle = {
+  fill: "#000",
+};
+
+const favouritesStyle = {
+  fill: "#fff",
 };

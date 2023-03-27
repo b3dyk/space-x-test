@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const CardItem = styled.li`
-  flex-basis: calc((100% - 24px * (3 - 1)) / 3);
+  box-sizing: border-box;
+  flex-basis: calc((100% - var(--indent) * (var(--items) - 1)) / var(--items));
   border: 1px solid var(--color-btn-main);
   transition: box-shadow var(--anim);
 `;
