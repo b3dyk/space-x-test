@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import spaceman from "../../images/spaceman.jpg";
+import spaceman from "../../images/bgImages/spaceman.jpg";
 
 export const HeroSection = styled.section`
   max-width: 1440px;
@@ -61,7 +61,8 @@ export const Btn = styled.button`
 export const List = styled.ul`
   display: flex;
   justify-content: flex-start;
-  align-items: center;
-  gap: 24px;
+  align-items: flex-start;
+  gap: 23px;
   margin-top: 24px;
+  flex-wrap: wrap;
 `;

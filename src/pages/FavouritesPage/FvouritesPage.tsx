@@ -1,5 +1,10 @@
+import { useRecoilState, useRecoilValue } from "recoil";
+
+import { favouritesAtom } from "../../recoil/atoms";
 import { Card } from "../../components/Card/Card";
 import { Container } from "../../components/Layout/Layout.styled";
+import { cardImages } from "../../images";
+
 import {
   Btn,
   FavouritesHeading,
@@ -7,9 +12,12 @@ import {
   HeroSection,
   List,
 } from "./FavouritesPage.styled";
-import cosmonaut from "../../images/cardimages/spaceman.jpg";
 
 const FavouritesPage: React.FC = () => {
+  const rockets = useRecoilValue(favouritesAtom);
+  const [favourites, setFavourites] = useRecoilState(favouritesAtom);
+  console.log(favourites);
+
   return (
     <>
       <HeroSection>
@@ -19,13 +27,21 @@ const FavouritesPage: React.FC = () => {
       </HeroSection>
       <FavouritesSection>
         <Container>
-          <Btn type="button">Clear all</Btn>
+          <Btn type="button" onClick={() => setFavourites([])}>
+            Clear all
+          </Btn>
           <List>
-            <Card
-              image={cosmonaut}
-              title="extraordinary tour"
-              text="Lorem ipsum dolor sit amet consectetur adipiscing elit"
-            />
+            {rockets.map((rocket, idx) => (
+              <Card
+                image={
+                  cardImages[
+                    idx < cardImages.length ? idx : idx - cardImages.length
+                  ]
+                }
+                rocket={rocket}
+                key={rocket.id}
+              />
+            ))}
           </List>
         </Container>
       </FavouritesSection>
