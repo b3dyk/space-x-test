@@ -1,7 +1,7 @@
 import animation404 from "../../images/404.gif";
 import { Container, HomeLink, Text, Image } from "./NotFoundPage.styled";
 
-const NotFoundPage = () => {
+const NotFoundPage: React.FC = () => {
   return (
     <Container>
       <Image style={{ backgroundImage: `url(${animation404})` }}></Image>

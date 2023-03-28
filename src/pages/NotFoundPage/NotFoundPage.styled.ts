@@ -20,12 +20,13 @@ export const Image = styled.div`
 `;
 
 export const Text = styled.h3`
-  margin: 0;
-  color: #020332;
+  color: var(--color-font-main);
+  text-transform: uppercase;
 `;
 
 export const HomeLink = styled(Link)`
   text-decoration: none;
+  text-transform: uppercase;
   color: var(--color-font-main);
   border: 1px solid var(--color-btn-main);
   padding: 16px;
