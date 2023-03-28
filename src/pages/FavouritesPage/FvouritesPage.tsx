@@ -2,7 +2,6 @@ import { useRecoilState } from "recoil";
 
 import { favouritesAtom } from "../../recoil/atoms";
 import { Card } from "../../components/Card/Card";
-import { Container } from "../../components/Layout/Layout.styled";
 
 import {
   Btn,
@@ -11,6 +10,7 @@ import {
   HeroSection,
   List,
 } from "./FavouritesPage.styled";
+import { Container } from "../../styles/commonStyles";
 
 const FavouritesPage: React.FC = () => {
   const [favourites, setFavourites] = useRecoilState(favouritesAtom);

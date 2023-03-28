@@ -1,9 +1,9 @@
 import { ReactElement } from "react";
 
-import { Container } from "../../components/Layout/Layout.styled";
 import { ToursSection } from "./HomePage.styled";
 import { HeroSection } from "../../components/HeroSection/HeroSection";
 import { CardsCarousel } from "../../components/CardsCarousel/CardsCarousel";
+import { Container } from "../../styles/commonStyles";
 
 const HomePage: React.FC = (): ReactElement => {
   return (

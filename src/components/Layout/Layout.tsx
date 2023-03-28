@@ -5,7 +5,6 @@ import logo from "../../images/logo/logo.png";
 import { ReactComponent as Heart } from "../../images/svg/heart.svg";
 import {
   BtnGroup,
-  Container,
   Header,
   LinkItem,
   List,
@@ -14,6 +13,7 @@ import {
 } from "./Layout.styled";
 import { Button } from "../Button/Button";
 import { IconNavLink } from "../IconNavLink/IconNavLink";
+import { Container } from "../../styles/commonStyles";
 
 const Layout: React.FC = () => {
   const location = useLocation();

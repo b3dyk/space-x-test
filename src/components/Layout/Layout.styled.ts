@@ -12,15 +12,6 @@ export const Header = styled.header`
   z-index: 10;
 `;
 
-export const Container = styled.div`
-  box-sizing: border-box;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1440px;
-  padding-left: 80px;
-  padding-right: 80px;
-`;
-
 export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
