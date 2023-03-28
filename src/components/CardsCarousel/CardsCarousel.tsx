@@ -1,11 +1,11 @@
 import { useQuery } from "@apollo/client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { GET_ROCKETS } from "../../apollo/client";
 import { SVG } from "../../images";
 import { cardImages } from "../../images";
 import { Card } from "../../components/Card/Card";
-import { RocketType } from "../../types/types";
+import { RocketWithImgType, RocketType, RocketsType } from "../../types/types";
 import { CARDS_SHOWN } from "../../constants/constants";
 
 import {
@@ -21,6 +21,7 @@ import { StyledIconButton } from "../IconButton/IconButton.styled";
 export const CardsCarousel: React.FC = () => {
   const { loading, error, data } = useQuery(GET_ROCKETS);
   const [currentIdx, setCurrentIdx] = useState(0);
+  const [rockets, setRockets] = useState<RocketsType>([]);
 
   const prev = () =>
     setCurrentIdx((currentIdx) =>
@@ -38,6 +39,20 @@ export const CardsCarousel: React.FC = () => {
   const numberOfPages = (arrayLength: number) => {
     return arrayLength - CARDS_SHOWN + 1;
   };
+
+  useEffect(() => {
+    if (data) {
+      setRockets(
+        data.rockets.map((rocket: RocketType, idx: number) => {
+          const newRocket = {
+            ...rocket,
+            image: cardImages[idx % 3],
+          };
+          return newRocket;
+        })
+      );
+    }
+  }, [data]);
 
   return (
     <>
@@ -58,22 +73,14 @@ export const CardsCarousel: React.FC = () => {
       ) : (
         <ListWrapper>
           <List style={{ transform: `translateX(-${currentIdx * 33.75}%)` }}>
-            {data.rockets.map((rocket: RocketType, idx: number) => (
-              <Card
-                key={rocket.id}
-                rocket={rocket}
-                image={
-                  cardImages[
-                    idx < cardImages.length ? idx : idx - cardImages.length
-                  ]
-                }
-              />
+            {rockets.map((rocket: RocketWithImgType) => (
+              <Card key={rocket.id} rocket={rocket} />
             ))}
           </List>
           <CardCarousel>
-            {data.rockets
-              .slice(0, numberOfPages(data.rockets.length))
-              .map((rocket: RocketType, idx: number) => (
+            {rockets
+              .slice(0, numberOfPages(rockets.length))
+              .map((rocket: RocketWithImgType, idx: number) => (
                 <div key={rocket.id} onClick={() => carouselHandler(idx)}>
                   {currentIdx === idx ? (
                     <SVG.CarouselDotFullDark style={{ cursor: "pointer" }} />
