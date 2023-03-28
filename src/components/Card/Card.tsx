@@ -1,23 +1,17 @@
 import { ThemeProvider } from "styled-components";
 import { useLocation } from "react-router-dom";
+import { useRecoilValue } from "recoil";
 
-import { ReactComponent as Heart } from "../../images/svg/heart.svg";
-import { ReactComponent as Delete } from "../../images/svg/delete.svg";
+import { favouritesAtom } from "../../recoil/atoms";
+import { SVG } from "../../images";
 import { Button } from "../Button/Button";
 import { IconButton } from "../IconButton/IconButton";
 import { CardItem, CardHeading, Description, BtnWrapper } from "./Card.styled";
 import { themeWide } from "../Button/Button.styled";
 import { ReadMoreReadLess } from "../ReadMoreReadLess/ReadMoreReadLess";
-import { RocketType } from "../../types/types";
-import { useRecoilValue } from "recoil";
-import { favouritesAtom } from "../../recoil/atoms";
+import { CardProps } from "../../types/types";
 
-type CardProps = {
-  rocket: RocketType;
-  image: string;
-};
-
-export const Card: React.FC<CardProps> = ({ rocket, image }: CardProps) => {
+export const Card: React.FC<CardProps> = ({ rocket }: CardProps) => {
   const rockets = useRecoilValue(favouritesAtom);
 
   const location = useLocation();
@@ -26,7 +20,7 @@ export const Card: React.FC<CardProps> = ({ rocket, image }: CardProps) => {
 
   return (
     <CardItem>
-      <img src={image} alt="space" width="411" />
+      <img src={rocket.image} alt="space" width="411" />
       <Description>
         <CardHeading>{rocket.name}</CardHeading>
         <ReadMoreReadLess limit={100}>{rocket.description}</ReadMoreReadLess>
@@ -36,11 +30,13 @@ export const Card: React.FC<CardProps> = ({ rocket, image }: CardProps) => {
           </ThemeProvider>
           {location.pathname.includes("favourites") ? (
             <IconButton rocket={rocket}>
-              <Delete />
+              <SVG.Delete />
             </IconButton>
           ) : (
             <IconButton rocket={rocket}>
-              <Heart style={isAddedToFav ? favouritesStyle : generalStyle} />
+              <SVG.Heart
+                style={isAddedToFav ? favouritesStyle : generalStyle}
+              />
             </IconButton>
           )}
         </BtnWrapper>
