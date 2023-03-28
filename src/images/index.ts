@@ -12,6 +12,8 @@ import { ReactComponent as CarouselDotFull } from "./svg/carouseldot-full.svg";
 import { ReactComponent as CarouselDot } from "./svg/carouseldot-empty.svg";
 import { ReactComponent as CarouselDotFullDark } from "./svg/carouseldot-full-dark.svg";
 import { ReactComponent as CarouselDotDark } from "./svg/carouseldot-empty-dark.svg";
+import { ReactComponent as Delete } from "./svg/delete.svg";
+import { ReactComponent as Heart } from "./svg/heart.svg";
 
 export const cardImages: string[] = [spaceship, spacegirl, spaceman];
 export const bgImages: string[] = [spacestation, cosmonaut, girl];
@@ -24,4 +26,6 @@ export const SVG = {
   CarouselDot,
   CarouselDotFullDark,
   CarouselDotDark,
+  Heart,
+  Delete,
 };
