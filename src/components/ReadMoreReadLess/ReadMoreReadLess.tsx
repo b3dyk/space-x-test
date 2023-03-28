@@ -1,10 +1,6 @@
 import { useState } from "react";
+import { ReadMoreProps } from "../../types/types";
 import { Btn, CardDesc } from "./ReadMoreReadLess.styled";
-
-type ReadMoreProps = {
-  limit: number;
-  children: string;
-};
 
 export const ReadMoreReadLess: React.FC<ReadMoreProps> = ({
   limit,

@@ -1,5 +1,4 @@
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
-import { RocketType } from "../types/types";
 
 export const client = new ApolloClient({
   uri: "https://spacex-production.up.railway.app/",
@@ -15,7 +14,3 @@ export const GET_ROCKETS = gql`
     }
   }
 `;
-
-export type FetchedData = {
-  rockets: RocketType[];
-};

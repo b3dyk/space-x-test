@@ -1,17 +1,11 @@
 import { useRecoilState } from "recoil";
 import { favouritesAtom } from "../../recoil/atoms";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
 import { StyledIconButton, themeFavourite } from "./IconButton.styled";
-import { RocketType } from "../../types/types";
+import { IconButtonProps } from "../../types/types";
 import { ThemeProvider } from "styled-components";
-import { useEffect, useState } from "react";
-
-export type IconButtonProps = {
-  children: React.ReactNode;
-  rocket?: RocketType;
-  style?: any;
-};
 
 export const IconButton: React.FC<IconButtonProps> = ({
   children,

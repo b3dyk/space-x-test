@@ -1,8 +1,5 @@
+import { IconNavLinkProps } from "../../types/types";
 import { StyledIconLink } from "./IconNavLink.styled";
-
-export type IconNavLinkProps = {
-  children: React.ReactNode;
-};
 
 export const IconNavLink: React.FC<IconNavLinkProps> = ({
   children,
