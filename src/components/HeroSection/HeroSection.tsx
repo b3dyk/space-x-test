@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { SVG } from "../../images";
 import { bgImages } from "../../images";
-import { Container } from "../Layout/Layout.styled";
+import { Container } from "../../styles/commonStyles";
 
 import {
   Heading,

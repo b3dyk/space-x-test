@@ -17,6 +17,7 @@ import {
   CardCarousel,
 } from "./CardsCarousel.styled";
 import { StyledIconButton } from "../IconButton/IconButton.styled";
+import { HiddenTitle } from "../../styles/commonStyles";
 
 export const CardsCarousel: React.FC = () => {
   const { loading, error, data } = useQuery(GET_ROCKETS);
@@ -46,7 +47,10 @@ export const CardsCarousel: React.FC = () => {
         data.rockets.map((rocket: RocketType, idx: number) => {
           const newRocket = {
             ...rocket,
-            image: cardImages[idx % 3],
+            image: {
+              uri: cardImages[idx % 3].uri,
+              alt: cardImages[idx % 3].alt,
+            },
           };
           return newRocket;
         })
@@ -61,9 +65,11 @@ export const CardsCarousel: React.FC = () => {
         <BtnWrapper>
           <StyledIconButton type="button" onClick={prev}>
             <SVG.ArrowLeft />
+            <HiddenTitle>Previous</HiddenTitle>
           </StyledIconButton>
           <StyledIconButton type="button" onClick={next}>
             <SVG.ArrowRight />
+            <HiddenTitle>Next</HiddenTitle>
           </StyledIconButton>
         </BtnWrapper>
       </Thumb>

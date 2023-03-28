@@ -6,10 +6,12 @@ import { useLocation } from "react-router-dom";
 import { StyledIconButton, themeFavourite } from "./IconButton.styled";
 import { IconButtonProps } from "../../types/types";
 import { ThemeProvider } from "styled-components";
+import { HiddenTitle } from "../../styles/commonStyles";
 
 export const IconButton: React.FC<IconButtonProps> = ({
   children,
   rocket,
+  title,
 }: IconButtonProps) => {
   const location = useLocation();
   const [isAddedToFav, setIsAddedToFav] = useState(false);
@@ -51,6 +53,7 @@ export const IconButton: React.FC<IconButtonProps> = ({
         }
       >
         {children}
+        <HiddenTitle>{title}</HiddenTitle>
       </StyledIconButton>
     </ThemeProvider>
   );

@@ -20,7 +20,7 @@ export const Card: React.FC<CardProps> = ({ rocket }: CardProps) => {
 
   return (
     <CardItem>
-      <img src={rocket.image} alt="space" width="411" />
+      <img src={rocket.image.uri} alt={rocket.image.alt} />
       <Description>
         <CardHeading>{rocket.name}</CardHeading>
         <ReadMoreReadLess limit={100}>{rocket.description}</ReadMoreReadLess>
@@ -29,11 +29,11 @@ export const Card: React.FC<CardProps> = ({ rocket }: CardProps) => {
             <Button text="buy" />
           </ThemeProvider>
           {location.pathname.includes("favourites") ? (
-            <IconButton rocket={rocket}>
+            <IconButton rocket={rocket} title="delete">
               <SVG.Delete />
             </IconButton>
           ) : (
-            <IconButton rocket={rocket}>
+            <IconButton rocket={rocket} title="add to favourites">
               <SVG.Heart
                 style={isAddedToFav ? favouritesStyle : generalStyle}
               />

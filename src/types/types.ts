@@ -12,7 +12,7 @@ export type RocketWithImgType = {
   id: string;
   name: string;
   description: string;
-  image: string;
+  image: CardImageType;
 };
 
 export type RocketsType = RocketWithImgType[];
@@ -24,6 +24,7 @@ export type ButtonProps = {
 export type IconButtonProps = {
   children: React.ReactNode;
   rocket: RocketWithImgType;
+  title: string;
 };
 
 export type CardProps = {
@@ -38,3 +39,10 @@ export type ReadMoreProps = {
   limit: number;
   children: string;
 };
+
+export type CardImageType = {
+  uri: string;
+  alt: string;
+};
+
+export type CardImages = CardImageType[];

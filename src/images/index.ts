@@ -1,6 +1,8 @@
-import spaceship from "./cardImages/spaseship.jpg";
-import spaceman from "./cardImages/spaceman.jpg";
-import spacegirl from "./cardImages/astronaut.jpg";
+import { CardImages } from "../types/types";
+
+import spaceship from "./cardImages/spaseship.webp";
+import spaceman from "./cardImages/spaceman.webp";
+import spacegirl from "./cardImages/astronaut.webp";
 import spacestation from "./bgImages/spaceship.jpg";
 import cosmonaut from "./bgImages/spaceman.jpg";
 import girl from "./bgImages/astronaut.jpg";
@@ -15,7 +17,11 @@ import { ReactComponent as CarouselDotDark } from "./svg/carouseldot-empty-dark.
 import { ReactComponent as Delete } from "./svg/delete.svg";
 import { ReactComponent as Heart } from "./svg/heart.svg";
 
-export const cardImages: string[] = [spaceship, spacegirl, spaceman];
+export const cardImages: CardImages = [
+  { uri: spaceship, alt: "Spaceship" },
+  { uri: spacegirl, alt: "Astronaut" },
+  { uri: spaceman, alt: "Cosmonaut" },
+];
 export const bgImages: string[] = [spacestation, cosmonaut, girl];
 
 export const SVG = {
