@@ -35,16 +35,9 @@ export const List = styled.ul`
   gap: 32px;
 `;
 
-export const StyledNavLink = styled(NavLink)`
+export const LinkItem = styled.li`
   padding-top: 8px;
   padding-bottom: 8px;
-  color: var(--color-font-light);
-
-  font-family: "Lato", sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.1875;
-  text-transform: uppercase;
   border-bottom: 1px solid transparent;
 
   transition: border-bottom var(--anim);
@@ -53,6 +46,18 @@ export const StyledNavLink = styled(NavLink)`
   :focus {
     border-bottom: 1px solid var(--color-font-light);
   }
+`;
+
+export const StyledNavLink = styled(NavLink)`
+  padding-top: 9px;
+  padding-bottom: 9px;
+
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.1875;
+  text-transform: uppercase;
+  color: var(--color-font-light);
 
   &.active {
     border-bottom: 1px solid var(--color-font-light);

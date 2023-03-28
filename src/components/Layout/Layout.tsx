@@ -7,6 +7,7 @@ import {
   BtnGroup,
   Container,
   Header,
+  LinkItem,
   List,
   StyledNavLink,
   Wrapper,
@@ -26,18 +27,18 @@ const Layout: React.FC = () => {
             </Link>
             <nav>
               <List>
-                <li>
+                <LinkItem>
                   <StyledNavLink to="/">Home</StyledNavLink>
-                </li>
-                <li>
+                </LinkItem>
+                <LinkItem>
                   <StyledNavLink to="tours">Tours</StyledNavLink>
-                </li>
-                <li>
+                </LinkItem>
+                <LinkItem>
                   <StyledNavLink to="about">About</StyledNavLink>
-                </li>
-                <li>
+                </LinkItem>
+                <LinkItem>
                   <StyledNavLink to="help">Help</StyledNavLink>
-                </li>
+                </LinkItem>
               </List>
             </nav>
             <BtnGroup>
