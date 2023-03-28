@@ -16,7 +16,7 @@ root.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
       <RecoilRoot>
-        <BrowserRouter basename="space-x-test">
+        <BrowserRouter basename="/space-x-test">
           <App />
         </BrowserRouter>
       </RecoilRoot>
