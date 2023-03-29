@@ -4,7 +4,7 @@ export const CardItem = styled.li`
   box-sizing: border-box;
   flex-basis: calc((100% - var(--indent) * (var(--items) - 1)) / var(--items));
   border: 1px solid var(--color-btn-main);
-  transition: box-shadow var(--anim);
+  height: ${(props) => props.theme.height};
 `;
 
 export const Description = styled.div`
@@ -30,3 +30,13 @@ export const BtnWrapper = styled.div`
   gap: 16px;
   margin-top: auto;
 `;
+
+CardItem.defaultProps = {
+  theme: {
+    height: "100%",
+  },
+};
+
+export const CardItemEmptyTheme = {
+  height: "629px",
+};

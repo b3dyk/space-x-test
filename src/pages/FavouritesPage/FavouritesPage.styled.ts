@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 import spaceman from "../../images/bgImages/spaceman.jpg";
@@ -33,6 +34,42 @@ export const FavouritesHeading = styled.h2`
 export const FavouritesSection = styled.section`
   padding-top: 60px;
   padding-bottom: 60px;
+`;
+
+export const Wrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const Disclaimer = styled.h3`
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.208;
+  text-transform: uppercase;
+`;
+
+export const HomeBtn = styled(Link)`
+  display: block;
+  margin-left: auto;
+  padding: 16px;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 29px;
+  background-color: transparent;
+  color: var(--color-btn-filter);
+
+  border: none;
+  cursor: pointer;
+
+  transition: background-color var(--anim);
+
+  :hover,
+  :focus {
+    background-color: var(--color-btn-secondary);
+  }
 `;
 
 export const Btn = styled.button`
