@@ -6,17 +6,16 @@ import { ReactComponent as Heart } from "../../images/svg/heart.svg";
 import {
   BtnGroup,
   Header,
-  LinkItem,
   List,
   StyledNavLink,
   Wrapper,
 } from "./Layout.styled";
-import { Button } from "../Button/Button";
 import { IconNavLink } from "../IconNavLink/IconNavLink";
-import { Container } from "../../styles/commonStyles";
+import { Container, StyledButton } from "../../styles/commonStyles";
 
 const Layout: React.FC = () => {
   const location = useLocation();
+
   return (
     <>
       <Header>
@@ -27,18 +26,18 @@ const Layout: React.FC = () => {
             </Link>
             <nav>
               <List>
-                <LinkItem>
+                <li>
                   <StyledNavLink to="/">Home</StyledNavLink>
-                </LinkItem>
-                <LinkItem>
+                </li>
+                <li>
                   <StyledNavLink to="tours">Tours</StyledNavLink>
-                </LinkItem>
-                <LinkItem>
+                </li>
+                <li>
                   <StyledNavLink to="about">About</StyledNavLink>
-                </LinkItem>
-                <LinkItem>
+                </li>
+                <li>
                   <StyledNavLink to="help">Help</StyledNavLink>
-                </LinkItem>
+                </li>
               </List>
             </nav>
             <BtnGroup>
@@ -51,7 +50,7 @@ const Layout: React.FC = () => {
                   }}
                 />
               </IconNavLink>
-              <Button text="Sign In" />
+              <StyledButton>Sign In</StyledButton>
             </BtnGroup>
           </Wrapper>
         </Container>

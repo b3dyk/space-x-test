@@ -1,11 +1,8 @@
 import { useState } from "react";
 import { ReadMoreProps } from "../../types/types";
-import { Btn, CardDesc } from "./ReadMoreReadLess.styled";
+import { Btn, CardDesc } from "./Collapsible.styled";
 
-export const ReadMoreReadLess: React.FC<ReadMoreProps> = ({
-  limit,
-  children,
-}) => {
+export const Collapsible: React.FC<ReadMoreProps> = ({ limit, children }) => {
   const [isReadMoreShown, setIsReadMoreShown] = useState(true);
 
   const toggleReadMore = () => {

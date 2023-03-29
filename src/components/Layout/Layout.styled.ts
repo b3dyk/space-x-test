@@ -16,7 +16,7 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 13px 0px 14px;
+  padding: 13px 0 14px;
 `;
 
 export const List = styled.ul`
@@ -26,9 +26,17 @@ export const List = styled.ul`
   gap: 32px;
 `;
 
-export const LinkItem = styled.li`
+export const StyledNavLink = styled(NavLink)`
+  display: block;
   padding-top: 8px;
   padding-bottom: 8px;
+
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.1875;
+  text-transform: uppercase;
+  color: var(--color-font-light);
   border-bottom: 1px solid transparent;
 
   transition: border-bottom var(--anim);
@@ -37,18 +45,6 @@ export const LinkItem = styled.li`
   :focus {
     border-bottom: 1px solid var(--color-font-light);
   }
-`;
-
-export const StyledNavLink = styled(NavLink)`
-  padding-top: 9px;
-  padding-bottom: 9px;
-
-  font-family: "Lato", sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.1875;
-  text-transform: uppercase;
-  color: var(--color-font-light);
 
   &.active {
     border-bottom: 1px solid var(--color-font-light);

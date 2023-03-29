@@ -4,12 +4,11 @@ import { useRecoilValue } from "recoil";
 
 import { favouritesAtom } from "../../recoil/atoms";
 import { SVG } from "../../images";
-import { Button } from "../Button/Button";
 import { IconButton } from "../IconButton/IconButton";
 import { CardItem, CardHeading, Description, BtnWrapper } from "./Card.styled";
-import { themeWide } from "../Button/Button.styled";
-import { ReadMoreReadLess } from "../ReadMoreReadLess/ReadMoreReadLess";
+import { Collapsible } from "../Collapsible/Collapsible";
 import { CardProps } from "../../types/types";
+import { StyledButton, themeWide } from "../../styles/commonStyles";
 
 export const Card: React.FC<CardProps> = ({ rocket }: CardProps) => {
   const rockets = useRecoilValue(favouritesAtom);
@@ -23,10 +22,10 @@ export const Card: React.FC<CardProps> = ({ rocket }: CardProps) => {
       <img src={rocket.image.uri} alt={rocket.image.alt} />
       <Description>
         <CardHeading>{rocket.name}</CardHeading>
-        <ReadMoreReadLess limit={100}>{rocket.description}</ReadMoreReadLess>
+        <Collapsible limit={100}>{rocket.description}</Collapsible>
         <BtnWrapper>
           <ThemeProvider theme={themeWide}>
-            <Button text="buy" />
+            <StyledButton>Buy</StyledButton>
           </ThemeProvider>
           {location.pathname.includes("favourites") ? (
             <IconButton rocket={rocket} title="delete">
