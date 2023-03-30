@@ -24,7 +24,7 @@ import { ThemeProvider } from "styled-components";
 const FavouritesPage: React.FC = () => {
   const [favourites, setFavourites] = useRecoilState(favouritesAtom);
 
-  const placeholderLength = () => {
+  const placeholderLength = (): number => {
     const arrLength = CARDS_SHOWN - favourites.length;
 
     if (arrLength < 0) return 0;

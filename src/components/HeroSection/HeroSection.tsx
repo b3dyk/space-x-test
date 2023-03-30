@@ -15,7 +15,7 @@ import {
 export const HeroSection: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const goToSlide = (imageIndex: number) => {
+  const goToSlide = (imageIndex: number): void => {
     setCurrentIndex(imageIndex);
   };
 

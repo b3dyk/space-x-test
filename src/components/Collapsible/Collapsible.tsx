@@ -5,7 +5,7 @@ import { Btn, CardDesc } from "./Collapsible.styled";
 export const Collapsible: React.FC<ReadMoreProps> = ({ limit, children }) => {
   const [isReadMoreShown, setIsReadMoreShown] = useState(true);
 
-  const toggleReadMore = () => {
+  const toggleReadMore = (): void => {
     setIsReadMoreShown((prev) => !prev);
   };
   return (

@@ -24,20 +24,20 @@ export const CardsCarousel: React.FC = () => {
   const [currentIdx, setCurrentIdx] = useState(0);
   const [rockets, setRockets] = useState<RocketsType>([]);
 
-  const prev = () =>
+  const prev = (): void =>
     setCurrentIdx((currentIdx) =>
       currentIdx === 0 ? data.rockets.length - CARDS_SHOWN : currentIdx - 1
     );
-  const next = () =>
+  const next = (): void =>
     setCurrentIdx((currentIdx) =>
       currentIdx === data.rockets.length - CARDS_SHOWN ? 0 : currentIdx + 1
     );
 
-  const carouselHandler = (index: number) => {
+  const carouselHandler = (index: number): void => {
     setCurrentIdx(index);
   };
 
-  const numberOfPages = (arrayLength: number) => {
+  const numberOfPages = (arrayLength: number): number => {
     return arrayLength - CARDS_SHOWN + 1;
   };
 

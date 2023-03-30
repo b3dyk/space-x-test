@@ -40,3 +40,11 @@ CardItem.defaultProps = {
 export const CardItemEmptyTheme = {
   height: "629px",
 };
+
+export const generalStyle = {
+  fill: "#000",
+};
+
+export const favouritesStyle = {
+  fill: "#fff",
+};

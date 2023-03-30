@@ -65,6 +65,6 @@ StyledButton.defaultProps = {
   },
 };
 
-export const themeWide = {
+export const wideTheme = {
   minWidth: "274px",
 };

@@ -5,10 +5,17 @@ import { useRecoilValue } from "recoil";
 import { favouritesAtom } from "../../recoil/atoms";
 import { SVG } from "../../images";
 import { IconButton } from "../IconButton/IconButton";
-import { CardItem, CardHeading, Description, BtnWrapper } from "./Card.styled";
+import {
+  CardItem,
+  CardHeading,
+  Description,
+  BtnWrapper,
+  favouritesStyle,
+  generalStyle,
+} from "./Card.styled";
 import { Collapsible } from "../Collapsible/Collapsible";
 import { CardProps } from "../../types/types";
-import { StyledButton, themeWide } from "../../styles/commonStyles";
+import { StyledButton, wideTheme } from "../../styles/commonStyles";
 
 export const Card: React.FC<CardProps> = ({ rocket }: CardProps) => {
   const rockets = useRecoilValue(favouritesAtom);
@@ -24,7 +31,7 @@ export const Card: React.FC<CardProps> = ({ rocket }: CardProps) => {
         <CardHeading>{rocket.name}</CardHeading>
         <Collapsible limit={100}>{rocket.description}</Collapsible>
         <BtnWrapper>
-          <ThemeProvider theme={themeWide}>
+          <ThemeProvider theme={wideTheme}>
             <StyledButton>Buy</StyledButton>
           </ThemeProvider>
           {location.pathname.includes("favourites") ? (
@@ -42,12 +49,4 @@ export const Card: React.FC<CardProps> = ({ rocket }: CardProps) => {
       </Description>
     </CardItem>
   );
-};
-
-const generalStyle = {
-  fill: "#000",
-};
-
-const favouritesStyle = {
-  fill: "#fff",
 };
