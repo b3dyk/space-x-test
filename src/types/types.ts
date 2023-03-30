@@ -33,6 +33,8 @@ export type CardProps = {
 
 export type IconNavLinkProps = {
   children: React.ReactNode;
+  path: string;
+  label: string;
 };
 
 export type ReadMoreProps = {

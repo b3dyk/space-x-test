@@ -3,9 +3,11 @@ import { StyledIconLink } from "./IconNavLink.styled";
 
 export const IconNavLink: React.FC<IconNavLinkProps> = ({
   children,
+  path,
+  label,
 }: IconNavLinkProps) => {
   return (
-    <StyledIconLink to="favourites" aria-label="favourites">
+    <StyledIconLink to={path} aria-label={label}>
       {children}
     </StyledIconLink>
   );

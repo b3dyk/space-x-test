@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 
 import logo from "../../images/logo/logo.png";
-import { ReactComponent as Heart } from "../../images/svg/heart.svg";
+import { SVG } from "../../images";
 import {
   BtnGroup,
   Header,
@@ -41,8 +41,8 @@ const Layout: React.FC = () => {
               </List>
             </nav>
             <BtnGroup>
-              <IconNavLink>
-                <Heart
+              <IconNavLink path="favourites" label="favourites">
+                <SVG.Heart
                   style={{
                     fill: location.pathname.includes("favourites")
                       ? "#fff"
