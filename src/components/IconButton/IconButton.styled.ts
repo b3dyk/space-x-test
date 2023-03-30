@@ -13,7 +13,7 @@ export const StyledIconButton = styled.button`
   transition: background-color var(--anim);
 
   :hover {
-    background-color: ${(props) => props.theme.backgroundColor};
+    background-color: ${(props) => props.theme.hover};
   }
 
   :active {
@@ -24,9 +24,11 @@ export const StyledIconButton = styled.button`
 StyledIconButton.defaultProps = {
   theme: {
     backgroundColor: "#ececec",
+    hover: "#e5e5e5",
   },
 };
 
 export const themeFavourite = {
   backgroundColor: "#dd377d",
+  hover: "#d2276f",
 };

@@ -23,12 +23,12 @@ export const IconButton: React.FC<IconButtonProps> = ({
     }
   }, [favourites, rocket]);
 
-  const handleDelete = (id: string) => {
+  const handleDelete = (id: string): void => {
     const filteredList = favourites.filter((rocket) => rocket.id !== id);
     setFavourites(filteredList);
   };
 
-  const toggleAddToFavourites = () => {
+  const toggleAddToFavourites = (): void => {
     if (rocket) {
       if (isAddedToFav) return handleDelete(rocket.id);
 
@@ -41,7 +41,7 @@ export const IconButton: React.FC<IconButtonProps> = ({
       theme={
         (!location.pathname.includes("favourites") &&
           isAddedToFav &&
-          themeFavourite) || { backgroundColor: "#ececec" }
+          themeFavourite) || { backgroundColor: "#ececec", hover: "#e5e5e5" }
       }
     >
       <StyledIconButton
